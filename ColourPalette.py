@@ -46,7 +46,7 @@ def plotImg(img1, ave1, (centroids, k), fn = ''):
     
 def getNearest(point, points, k):
     nbrs = NearestNeighbors(k).fit(points)
-    distances, indices = nbrs.kneighbors(point)
+    distances, indices = nbrs.kneighbors(point.reshape(1, -1))
     return distances, indices
 
 if __name__ == '__main__':
@@ -73,7 +73,7 @@ if __name__ == '__main__':
     red = zoom(red, rescale)
     green = zoom(green, rescale)
     blue = zoom(blue, rescale)
-    mat = np.zeros((height*rescale, width*rescale, 3))
+    mat = np.zeros((int(height*rescale), int(width*rescale), 3))
     
     mat[:,:,0] = red
     mat[:,:,1] = green

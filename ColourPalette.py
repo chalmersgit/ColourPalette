@@ -50,7 +50,7 @@ def getNearest(point, points, k):
     return distances, indices
 
 if __name__ == '__main__':
-    print 'Colour Palette'
+    print('Colour Palette')
     
     # Read in image data
     fnRaw = 'photo3'
@@ -63,7 +63,7 @@ if __name__ == '__main__':
     height = mat.shape[0]
     numPxls = width*height
 
-    print 'Resolution:', width, 'x', height
+    print('Resolution:', width, 'x', height)
     
     red = mat[:,:,0]
     green = mat[:,:,1]
@@ -83,7 +83,7 @@ if __name__ == '__main__':
     height = mat.shape[0]
     numPxls = width*height
     
-    print 'Resized to:', width, 'x', height
+    print('Resized to:', width, 'x', height)
     
     redVec = red.reshape(-1)
     greenVec = green.reshape(-1)
@@ -115,4 +115,4 @@ if __name__ == '__main__':
     # Display results
     plotImg(img, aveImg, (centroids, k), fnRaw)
     
-    print 'Success'
+    print('Success')

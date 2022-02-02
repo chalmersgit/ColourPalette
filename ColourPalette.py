@@ -13,7 +13,7 @@ from scipy.ndimage.interpolation import zoom
 from sklearn.cluster import k_means
 from sklearn.neighbors import NearestNeighbors
 
-def plotImg(img1, ave1, (centroids, k), fn = ''):
+def plotImg(img1, ave1, centroids, k, fn = ''):
     fig = plt.figure(1, figsize=(12, 6))
     
     plt.clf()    
@@ -113,6 +113,6 @@ if __name__ == '__main__':
     '''
     
     # Display results
-    plotImg(img, aveImg, (centroids, k), fnRaw)
+    plotImg(img, aveImg, centroids, k, fnRaw)
     
     print('Success')
